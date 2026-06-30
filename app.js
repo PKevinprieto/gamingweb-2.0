@@ -147,3 +147,4 @@ backButton.addEventListener("click", () => {
 
   input.value = "";
 });
+alert(window.innerWidth);
