@@ -1,5 +1,6 @@
 const cards = document.querySelector(".cards");
-
+const input = document.querySelector("#search");
+const backButton = document.querySelector("#back-products");
 function createCard(product) {
   const card = document.createElement("div");
   card.classList.add("card");
@@ -97,4 +98,52 @@ function createSpecs(product) {
   return ul;
 }
 
-productos.forEach(createCard);
+// productos.forEach(createCard);
+
+// BUSCADOR
+
+// function renderCards(listaProductos) {
+//   cards.innerHTML = "";
+
+//   listaProductos.forEach(createCard);
+// }
+function renderCards(listaProductos) {
+  console.log("Antes:", cards.children.length);
+
+  cards.innerHTML = "";
+
+  console.log("Después de borrar:", cards.children.length);
+
+  listaProductos.forEach(createCard);
+
+  console.log("Después de crear:", cards.children.length);
+}
+function searchProduct() {
+  const searchedProduct = input.value.toLowerCase();
+
+  const filtrados = productos.filter((p) => {
+    return p.name.toLowerCase().includes(searchedProduct);
+  });
+  if (filtrados.length === 0) {
+    alert("No se encontró ningún producto.");
+    return;
+  }
+  renderCards(filtrados);
+  backButton.style.display = "block";
+}
+
+renderCards(productos);
+
+input.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    searchProduct();
+    input.value = "";
+  }
+});
+backButton.addEventListener("click", () => {
+  renderCards(productos);
+
+  backButton.style.display = "none";
+
+  input.value = "";
+});

@@ -143,36 +143,4 @@ const productos = [
       "Dynamic Island",
     ],
   },
-  {
-    name: "IPHONE 15",
-
-    image: "celulares/crop_i17pm.png",
-
-    price: "$0.000",
-
-    specs: [
-      'Pantalla 6.1" OLED 60Hz',
-      "Chip A16 Bionic",
-      "Cámara Dual 48MP",
-      "Aluminio",
-      "USB-C",
-      "Dynamic Island",
-    ],
-  },
-  {
-    name: "IPHONE 15",
-
-    image: "celulares/crop_i17pm.png",
-
-    price: "$0.000",
-
-    specs: [
-      'Pantalla 6.1" OLED 60Hz',
-      "Chip A16 Bionic",
-      "Cámara Dual 48MP",
-      "Aluminio",
-      "USB-C",
-      "Dynamic Island",
-    ],
-  },
 ];
