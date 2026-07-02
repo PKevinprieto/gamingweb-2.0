@@ -116,15 +116,9 @@ function createSpecs(product) {
   return ul;
 }
 function renderCards(listaProductos) {
-  console.log("Antes:", cards.children.length);
-
   cards.innerHTML = "";
 
-  console.log("Después de borrar:", cards.children.length);
-
   listaProductos.forEach(createCard);
-
-  console.log("Después de crear:", cards.children.length);
 }
 function searchProduct() {
   const searchedProduct = input.value.toLowerCase();
